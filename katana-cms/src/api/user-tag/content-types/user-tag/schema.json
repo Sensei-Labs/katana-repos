@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_tags",
+  "info": {
+    "singularName": "user-tag",
+    "pluralName": "user-tags",
+    "displayName": "userTag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

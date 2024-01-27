@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Tasks",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "Not_started",
+        "Started",
+        "Completed"
+      ],
+      "default": "Not_started",
+      "required": false
+    },
+    "milestone": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::milestone.milestone",
+      "inversedBy": "tasks"
+    },
+    "by": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

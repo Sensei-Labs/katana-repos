@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "push_notifications",
+  "info": {
+    "singularName": "push-notification",
+    "pluralName": "push-notifications",
+    "displayName": "Push Notifications",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "notifications"
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "read",
+        "delete"
+      ],
+      "default": "new",
+      "required": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "question",
+        "answer",
+        "info",
+        "news"
+      ],
+      "required": true
+    },
+    "question": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question.question"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

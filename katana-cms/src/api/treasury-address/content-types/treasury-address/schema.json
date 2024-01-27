@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "treasury_addresses",
+  "info": {
+    "singularName": "treasury-address",
+    "pluralName": "treasury-addresses",
+    "displayName": "Treasury Address",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "color": {
+      "type": "string",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true
+    },
+    "isRoyalty": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

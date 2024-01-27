@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quests",
+  "info": {
+    "singularName": "quest",
+    "pluralName": "quests",
+    "displayName": "Quest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "details": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "spRewards": {
+      "type": "integer"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "completed": {
+      "type": "integer",
+      "default": 0
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "Discord",
+        "Twitter",
+        "Creative"
+      ]
+    }
+  }
+}

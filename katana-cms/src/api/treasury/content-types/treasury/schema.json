@@ -1,0 +1,130 @@
+{
+  "kind": "collectionType",
+  "collectionName": "treasuries",
+  "info": {
+    "singularName": "treasury",
+    "pluralName": "treasuries",
+    "displayName": "Treasuries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "active",
+        "inactive"
+      ],
+      "default": "draft",
+      "required": false
+    },
+    "frontPage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "treasuryAddresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::treasury-address.treasury-address"
+    },
+    "acceptedCollectionAddress": {
+      "type": "json"
+    },
+    "discordLink": {
+      "type": "string",
+      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+    },
+    "twitterUser": {
+      "type": "string",
+      "required": false
+    },
+    "websiteLink": {
+      "type": "string",
+      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+    },
+    "collection_nfts_addresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "treasury"
+    },
+    "milestones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::milestone.milestone",
+      "mappedBy": "treasury"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "treasury"
+    },
+    "access": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "treasuries"
+    },
+    "moreLinks": {
+      "type": "json"
+    },
+    "news": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::new.new",
+      "mappedBy": "project"
+    },
+    "accessDiscordRolesID": {
+      "type": "json"
+    },
+    "adminDiscordRolesID": {
+      "type": "json"
+    },
+    "proposals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proposal.proposal",
+      "mappedBy": "treasury"
+    },
+    "discordID": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

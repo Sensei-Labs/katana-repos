@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transactions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "toUserAccount": {
+      "type": "text",
+      "required": true
+    },
+    "fromUserAccount": {
+      "type": "text",
+      "required": true
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "amount": {
+      "type": "biginteger",
+      "required": true
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transactions-tag.transactions-tag"
+    },
+    "treasury": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::treasury.treasury"
+    },
+    "walletAddressTrack": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::treasury-address.treasury-address"
+    },
+    "signature": {
+      "type": "string",
+      "required": true
+    },
+    "symbol": {
+      "type": "enumeration",
+      "default": "SOL",
+      "enum": [
+        "SOL",
+        "USDC"
+      ],
+      "required": true
+    },
+    "tokenName": {
+      "type": "string",
+      "required": true
+    },
+    "tokenIcon": {
+      "type": "string",
+      "required": false,
+      "default": "/images/tokens/solana.svg"
+    },
+    "decimals": {
+      "type": "integer",
+      "default": 9,
+      "required": false
+    },
+    "idSolscan": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "IN",
+        "OUT"
+      ],
+      "required": false
+    }
+  }
+}

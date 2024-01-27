@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "singularName": "collection",
+    "pluralName": "collections",
+    "displayName": "Collections",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "collectionOnchainId": {
+      "type": "string",
+      "required": true
+    },
+    "magicEdenSymbol": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "solscanID": {
+      "type": "string",
+      "required": true
+    },
+    "treasury": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::treasury.treasury",
+      "inversedBy": "collection_nfts_addresses"
+    }
+  }
+}

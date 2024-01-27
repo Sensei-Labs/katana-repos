@@ -1,0 +1,52 @@
+{
+  "name": "katana-cms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "build": "strapi build",
+    "build:full": "cd src/plugins/trigger-data && yarn build && cd ../../../ && yarn build",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/better-queue": "^3.8.3",
+    "prettier": "^2.8.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
+    "@strapi/plugin-i18n": "4.7.1",
+    "@strapi/plugin-users-permissions": "4.7.1",
+    "@strapi/provider-upload-aws-s3": "4.7.1",
+    "@strapi/strapi": "4.7.1",
+    "axios": "^1.4.0",
+    "better-queue": "^3.8.12",
+    "bignumber.js": "^9.1.1",
+    "cache-manager": "^5.1.6",
+    "dayjs": "^1.11.7",
+    "pg": "^8.9.0",
+    "socket.io": "^4.6.1",
+    "sqlite3": "^5.1.4",
+    "strapi-plugin-transformer": "^3.x.x",
+    "ws": "^8.13.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "3ec28189-f164-4f2f-a187-afe63a169c98"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "volta": {
+    "node": "16.20.0",
+    "yarn": "1.22.19"
+  }
+}

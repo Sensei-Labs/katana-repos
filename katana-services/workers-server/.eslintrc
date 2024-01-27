@@ -1,0 +1,21 @@
+{
+  "extends": ["airbnb-base", "airbnb-typescript/base"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "no-await-in-loop": "off",
+    "arrow-body-style": "off",
+    "operator-linebreak": "off",
+    "no-plusplus": "off",
+    "guard-for-in": "off",
+    "no-restricted-syntax": "off",
+    "no-underscore-dangle": "off",
+    "max-len": "off",
+    "no-param-reassign": "off",
+    "no-inner-declarations": "off",
+    "class-methods-use-this": "off"
+  }
+}

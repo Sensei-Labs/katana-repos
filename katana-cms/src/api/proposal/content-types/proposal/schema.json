@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "singularName": "proposal",
+    "pluralName": "proposals",
+    "displayName": "Proposal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "votes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vote.vote",
+      "mappedBy": "proposal"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "completed",
+        "defeated",
+        "voting",
+        "coolOff"
+      ]
+    },
+    "approvalQuorum": {
+      "type": "integer"
+    },
+    "treasury": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::treasury.treasury",
+      "inversedBy": "proposals"
+    },
+    "votesCount": {
+      "type": "integer"
+    }
+  }
+}

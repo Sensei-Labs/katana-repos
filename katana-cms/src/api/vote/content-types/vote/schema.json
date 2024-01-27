@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "votes",
+  "info": {
+    "singularName": "vote",
+    "pluralName": "votes",
+    "displayName": "Vote",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vote": {
+      "type": "enumeration",
+      "enum": ["yes", "no"]
+    },
+    "proposal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::proposal.proposal",
+      "inversedBy": "votes"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "vote"
+    }
+  }
+}
